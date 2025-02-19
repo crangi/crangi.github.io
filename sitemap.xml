@@ -11,18 +11,22 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>/publication-type/3/</loc>
-    <lastmod>2024-03-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>/publication/otoc/</loc>
-    <lastmod>2024-03-05T00:00:00+00:00</lastmod>
+    <loc>/publication/nedmftdis/</loc>
+    <lastmod>2024-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>/publication_types/</loc>
-    <lastmod>2024-03-05T00:00:00+00:00</lastmod>
+    <lastmod>2024-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>/publication/</loc>
+    <lastmod>2024-05-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>/publication/otoc/</loc>
     <lastmod>2024-03-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -64,10 +68,6 @@
   </url><url>
     <loc>/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>/publication/nedmftdis/</loc>
-    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>/tag/deep-learning/</loc>
