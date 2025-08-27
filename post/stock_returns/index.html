@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: August 26, 2025 --><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather&family=Roboto+Mono&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather&family=Roboto+Mono&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.047268c6dd09ad74ba54a0ba71837064.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.4df2da47b3acdae244f67eb14f1e2efa.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-45Q5GRGRTR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'G-45Q5GRGRTR', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Chakradhar Rangi" />
+
+
+
+
+
+  
+
+<meta name="description" content="Have you ever heard that stock market returns (logarithmic returns to be precise) are supposed to follow that classic bell curve—the &ldquo;normal distribution&rdquo;? It&rsquo;s one of the key assumptions of financial math, making a lot of complex theories work neatly." />
+
+
+
+<link rel="alternate" hreflang="en-us" href="/post/stock_returns/" />
+<link rel="canonical" href="/post/stock_returns/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu6486c285d0c8ff98a173d1783271b5db_1099604_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu6486c285d0c8ff98a173d1783271b5db_1099604_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary" />
+
+  <meta property="twitter:site" content="@rchakri25" />
+  <meta property="twitter:creator" content="@rchakri25" />
+<meta property="twitter:image" content="/media/icon_hu6486c285d0c8ff98a173d1783271b5db_1099604_512x512_fill_lanczos_center_3.png" />
+<meta property="og:site_name" content="Chakradhar Rangi" />
+<meta property="og:url" content="/post/stock_returns/" />
+<meta property="og:title" content="Are financial stock returns normally distributed? | Chakradhar Rangi" />
+<meta property="og:description" content="Have you ever heard that stock market returns (logarithmic returns to be precise) are supposed to follow that classic bell curve—the &ldquo;normal distribution&rdquo;? It&rsquo;s one of the key assumptions of financial math, making a lot of complex theories work neatly." /><meta property="og:image" content="/media/icon_hu6486c285d0c8ff98a173d1783271b5db_1099604_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2025-08-24T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2025-08-24T00:00:00&#43;00:00">
+  
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/stock_returns/"
+  },
+  "headline": "Are financial stock returns normally distributed?",
+  
+  "datePublished": "2025-08-24T00:00:00Z",
+  "dateModified": "2025-08-24T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Chakradhar Rangi"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chakradhar Rangi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/media/icon_hu6486c285d0c8ff98a173d1783271b5db_1099604_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Have you ever heard that stock market returns (logarithmic returns to be precise) are supposed to follow that classic bell curve—the \u0026ldquo;normal distribution\u0026rdquo;? It\u0026rsquo;s one of the key assumptions of financial math, making a lot of complex theories work neatly."
+}
+</script>
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Are financial stock returns normally distributed? | Chakradhar Rangi</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="21b863f8c6a6cfc42397a9522487ca7d" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.ec9d49ca50e4b80bdb08f0417a28ed84.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Chakradhar Rangi</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Chakradhar Rangi</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publication"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/notes/"><span>Notes</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Are financial stock returns normally distributed?</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Chakradhar Rangi</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Aug 24, 2025
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    9 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>Have you ever heard that stock market returns (logarithmic returns to be precise) are supposed to follow that classic bell curve—the &ldquo;normal distribution&rdquo;? It&rsquo;s one of the key assumptions of financial math, making a lot of complex theories work neatly. But the real world market data feels a lot messier than a perfect bell curve, doesn&rsquo;t it?</p>
+<p>So, in this blog, I decided to put this textbook theory to the test. Let&rsquo;s grab some real stock data and see if it actually behaves the way the models say it should. We&rsquo;ll be detectives, using a few simple graphical and statistical tools to uncover the truth.</p>
+<h3 id="graphical-tests">Graphical tests</h3>
+<p>Visual checks are a great first step to get a feel for the data. Today, we will be looking at two such tests.</p>
+<ul>
+<li>
+<p><strong>Quantile-Quantile(Q-Q) plot</strong>: With a Q-Q plot, the observed data&rsquo;s quantiles are plotted against the theoretical quantiles (normal distribution in our case). This one sounds complicated, but it&rsquo;s basically a &ldquo;line-up&rdquo; test. We ask our data&rsquo;s values to line up against where they should be in a perfect normal distribution (theoretical quantiles). If our data is truly &ldquo;normal,&rdquo; the points on the plot will form a perfectly straight diagonal line. If they start wandering off—especially at the ends—it&rsquo;s a dead giveaway that something else is going on.</p>
+</li>
+<li>
+<p><strong>Box plot</strong>: The box plot is a quick check for our data&rsquo;s symmetry. Imagine a perfectly balanced scale: the median line is the center point, and the box and whiskers are evenly spread on both sides. If one side is much longer than the other or the median is off-center, it’s a clear signal that our data is skewed and not following a normal distribution.</p>
+</li>
+</ul>
+<p>The main drawback of these tests, however, is that they&rsquo;re subjective—we&rsquo;re sometimes just eyeballing it. They don&rsquo;t give us a hard number to measure exactly how much our data deviates from normality. That&rsquo;s where statistical tests come in - they give us a clear, quantifiable result.</p>
+<h3 id="statistical-tests">Statistical tests</h3>
+<p>Statistical tests give us a clear mathematical verdict. They work by first assuming the data is normal and then calculating how likely it is we would see our particular dataset under that assumption.</p>
+<p>This likelihood is called the p-value. In simple terms: if the p-value is low (less than 0.05), it means our data is a very bad fit for the normal distribution model. So, a low p-value gives us statistical proof that our data is not normal.</p>
+<p>The specific test we&rsquo;ll be using in this blog is the <a href="https://en.wikipedia.org/wiki/Shapiro%e2%80%93Wilk_test" target="_blank" rel="noopener">Shapiro-Wilk test</a>. Another popular statistical test is the <a href="https://en.wikipedia.org/wiki/Kolmogorov%e2%80%93Smirnov_test" target="_blank" rel="noopener">Kolmogorov-Smirnov test</a> which we&rsquo;ll not be using today.</p>
+<h2 id="testing-the-evidence-of-normal-distribution-for-jpmorgan-chase--co">Testing the evidence of normal distribution for JPMorgan Chase &amp; Co</h2>
+<p>For this test, I&rsquo;m choosing JPMorgan Chase &amp; Co (JPM), but you can follow along with any stock you&rsquo;re curious about! Just change the ticker from &lsquo;JPM&rsquo; to something else (like &lsquo;AAPL&rsquo; or &lsquo;TSLA&rsquo;) in the code below and see what you find.</p>
+<h3 id="let-us-import-the-necessary-python-modules">Let us import the necessary python modules</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span> 
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Setting global matplotlib parameters</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span> 
+</span></span><span class="line"><span class="cl"><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&#34;xtick.labelsize&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">22</span>
+</span></span><span class="line"><span class="cl"><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&#34;ytick.labelsize&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">22</span>
+</span></span><span class="line"><span class="cl"><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.titlesize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">22</span> 
+</span></span><span class="line"><span class="cl"><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+</span></span><span class="line"><span class="cl"><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">24</span>
+</span></span><span class="line"><span class="cl"><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;serif&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&#34;mathtext.fontset&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;cm&#39;</span>
+</span></span></code></pre></div><h3 id="downloading-10-year-of-jpm-data">Downloading 10 year of JPM data</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">EndDate</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">StartDate</span> <span class="o">=</span> <span class="n">EndDate</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">years</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">JPMStockData</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;JPM&#39;</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="n">StartDate</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">EndDate</span><span class="p">)[</span><span class="s2">&#34;Close&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">JPMStockReturns</span> <span class="o">=</span> <span class="n">JPMStockData</span><span class="o">/</span><span class="n">JPMStockData</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">JPMStockLogReturns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">JPMStockReturns</span><span class="o">.</span><span class="n">dropna</span><span class="p">())[</span><span class="s1">&#39;JPM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</span></span><span class="line"><span class="cl"><span class="n">Dates</span> <span class="o">=</span> <span class="n">JPMStockReturns</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
+</span></span></code></pre></div><h3 id="let-us-plot-the-q-q-and-box-plot-of-log-returns-of-jpm-stock-using-built-in-plotting-functions-from-statsmodel-and-matplotlib">Let us plot the Q-Q and box plot of log returns of JPM stock using built-in plotting functions from statsmodel and matplotlib</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">JPMStockLogReturns</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s2">&#34;norm&#34;</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;JPMorgan Chase &amp; Co Log Returns Q-Q Plot&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">JPMStockLogReturns</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&#34;Variable&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&#34;Value&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;JPMorgan Chase &amp; Co Log Returns Box Plot&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="png" srcset="
+               /post/stock_returns/output_6_0_hua1ae01a9eff772d47d901f845eb1b44a_236187_3b3dbe61238ded5ba277f000e01f895b.webp 400w,
+               /post/stock_returns/output_6_0_hua1ae01a9eff772d47d901f845eb1b44a_236187_ff75a105ebe7751cb2e331083ee8934c.webp 760w,
+               /post/stock_returns/output_6_0_hua1ae01a9eff772d47d901f845eb1b44a_236187_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/post/stock_returns/output_6_0_hua1ae01a9eff772d47d901f845eb1b44a_236187_3b3dbe61238ded5ba277f000e01f895b.webp"
+               width="760"
+               height="279"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>The Q-Q plot above shows the dots veering off the straight line, creating what analysts call &ldquo;heavy tails.&rdquo; Think of these as the market&rsquo;s mood swings—the unexpectedly huge up and down days that the neat bell curve just can&rsquo;t predict. Let us further perform statistical tests.</p>
+<h3 id="shapiro-wilk-test">Shapiro-Wilk test</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pvalue</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">JPMStockLogReturns</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Normality Test Results of JPMStockLogReturns stock (Shapiro-Wilk test):&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;p-value = </span><span class="si">{</span><span class="n">pvalue</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pvalue</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Statistically significant evidence that the data is NOT normally distributed.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No statistically significant evidence against normality.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>Normality Test Results of JPMStockLogReturns stock (Shapiro-Wilk test):
+p-value = 2.453415772115319e-39
+Statistically significant evidence that the data is NOT normally distributed.
+</code></pre>
+<p>Our first verdict is here: Over the last 10 years, JPM&rsquo;s returns are anything but normal, and both our statistical and graphical tests confirms it. The culprit? Our 10-year data captures wild market swings from events like COVID and global conflicts, leading to extreme data points. This sparks an interesting question: could there be a calmer period, free from extreme market volatility, where JPM log returns actually align with a normal distribution? To check for such periods, let us plot JPM log returns over the last 10 years.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Dates</span><span class="p">,</span><span class="n">JPMStockLogReturns</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Log returns of JPMorgan Chase &amp; Co stock over a 10 year period&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">MaxNLocator</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%Y-%m&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">StartDate</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">EndDate</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">StartDate</span><span class="p">,</span> <span class="n">EndDate</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="png" srcset="
+               /post/stock_returns/output_10_0_hu905ac2e6357599e3e179fe1f06396a53_305763_4d3e5fa1444f67b10277fc9e79302260.webp 400w,
+               /post/stock_returns/output_10_0_hu905ac2e6357599e3e179fe1f06396a53_305763_b5720e944647d9a17c80504fffe8d5c6.webp 760w,
+               /post/stock_returns/output_10_0_hu905ac2e6357599e3e179fe1f06396a53_305763_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/post/stock_returns/output_10_0_hu905ac2e6357599e3e179fe1f06396a53_305763_4d3e5fa1444f67b10277fc9e79302260.webp"
+               width="760"
+               height="418"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>Just look at this plot of the returns over time. You can literally see the wild swings from the COVID crash in 2020 and recent global conflicts.</p>
+<p>But wait&hellip; see that green highlighted area in 2021? It looks much calmer. This got me thinking: maybe the normality assumption isn&rsquo;t completely wrong, it just doesn&rsquo;t work when the market is having a meltdown. What if we zoom in on that quiet period? Let&rsquo;s investigate!</p>
+<h3 id="let-us-download-the-data-for-jpmorgan-chase--co-during-the-highlighted-area-2021">Let us download the data for JPMorgan Chase &amp; Co during the highlighted area (2021)</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">JPMStockDataCustom</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;JPM&#39;</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="n">StartDate</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">EndDate</span><span class="p">)[</span><span class="s2">&#34;Close&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">JPMStockReturnsCustom</span> <span class="o">=</span> <span class="n">JPMStockDataCustom</span><span class="o">/</span><span class="n">JPMStockDataCustom</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">JPMStockLogReturnsCustom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">JPMStockReturnsCustom</span><span class="o">.</span><span class="n">dropna</span><span class="p">())[</span><span class="s1">&#39;JPM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</span></span><span class="line"><span class="cl"><span class="n">DatesCustom</span> <span class="o">=</span> <span class="n">JPMStockReturnsCustom</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">DatesCustom</span><span class="p">,</span><span class="n">JPMStockLogReturnsCustom</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">MaxNLocator</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%y-%m&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Log returns of JPMorgan Chase &amp; Co stock in 2021&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="png" srcset="
+               /post/stock_returns/output_13_0_hufc88e5d684519a8980f24e01e96fb709_430006_3ed7dbd46e6fa158f6349da4c194e569.webp 400w,
+               /post/stock_returns/output_13_0_hufc88e5d684519a8980f24e01e96fb709_430006_37e93ef7fe90130c2a302c2cba23774d.webp 760w,
+               /post/stock_returns/output_13_0_hufc88e5d684519a8980f24e01e96fb709_430006_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/post/stock_returns/output_13_0_hufc88e5d684519a8980f24e01e96fb709_430006_3ed7dbd46e6fa158f6349da4c194e569.webp"
+               width="760"
+               height="453"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="q-q--and-box-plot---log-returns-of-jpmorgan-chase--co-2021">Q-Q  and box plot - log returns of JPMorgan Chase &amp; Co (2021)</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">JPMStockLogReturnsCustom</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s2">&#34;norm&#34;</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;JPM Log Returns Q-Q Plot (2021)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">JPMStockLogReturnsCustom</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&#34;Variable&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&#34;Value&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;JPM Log Returns Box Plot (2021)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="png" srcset="
+               /post/stock_returns/output_15_0_hu00d28f978fd34aa12dbde1cd095b6963_275389_8287f2a75bb2dee73e6c4b5e3eea46b5.webp 400w,
+               /post/stock_returns/output_15_0_hu00d28f978fd34aa12dbde1cd095b6963_275389_181f9a2ca968fc08d5599607d7c3621c.webp 760w,
+               /post/stock_returns/output_15_0_hu00d28f978fd34aa12dbde1cd095b6963_275389_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/post/stock_returns/output_15_0_hu00d28f978fd34aa12dbde1cd095b6963_275389_8287f2a75bb2dee73e6c4b5e3eea46b5.webp"
+               width="760"
+               height="282"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="shapiro-wilk-test---log-returns-of-jpmorgan-chase--co-2021">Shapiro-Wilk test - Log returns of JPMorgan Chase &amp; Co (2021)</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pvalue</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">JPMStockLogReturnsCustom</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Normality Test Results of JPMorgan Chase &amp; Co stock (Shapiro-Wilk test):&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;p-value = </span><span class="si">{</span><span class="n">pvalue</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pvalue</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Statistically significant evidence that the data is NOT normally distributed.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No statistically significant evidence against normality.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>Normality Test Results of JPMorgan Chase &amp; Co stock (Shapiro-Wilk test):
+p-value = 0.7530741691589355
+No statistically significant evidence against normality.
+</code></pre>
+<p>We are in for suprising results! The dots in the Q-Q plot have lined up and the p-value is 0.75. That&rsquo;s a huge number, and it means we have no evidence to say the data isn&rsquo;t normal. It seems we found a &rsquo;normal&rsquo; year for JPM. This is fascinating! It suggests that the normality assumption might hold up, but only in very specific, stable market conditions. This raises a compelling question for future exploration: what market conditions in 2021 fostered this normality, and can they be replicated in other stable periods? These questions are interesting future endeavors.</p>
+<h2 id="further-investigation-trimming-extremal-values-from-the-dataset">Further investigation: Trimming extremal values from the dataset</h2>
+<p>This got me thinking: we know the extreme market events are skewing our results. So what if we just removed them? If we trim off the most extreme daily returns, will the remaining &ldquo;calmer&rdquo; data finally follow a normal distribution?</p>
+<p>To find out, we&rsquo;ll use the box plot itself to define what counts as &ldquo;extreme.&rdquo; The plot&rsquo;s &ldquo;whiskers&rdquo; create a boundary for the bulk of the data. Any data point that falls outside those whiskers is considered an outlier. We&rsquo;ll chop off those pesky outliers and test the data that&rsquo;s left.</p>
+<h3 id="we-are-re-plotting-the-jpm-log-returns-over-last-10-years-to-extract-whiskers">We are re-plotting the JPM log returns over last 10 years to extract whiskers</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">JPMStockLogReturns</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s2">&#34;norm&#34;</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;JPMorgan Chase &amp; Co Log Returns Q-Q Plot&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">WhiskersBoxPlot</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">JPMStockLogReturns</span><span class="p">)[</span><span class="s2">&#34;whiskers&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&#34;Variable&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&#34;Value&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;JPMorgan Chase &amp; Co Log Returns Box Plot&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="png" srcset="
+               /post/stock_returns/output_21_0_hua1ae01a9eff772d47d901f845eb1b44a_236187_54a52bbb659184ab293fd66ab08a7d56.webp 400w,
+               /post/stock_returns/output_21_0_hua1ae01a9eff772d47d901f845eb1b44a_236187_d8b0c26c84ecefa1bc88a27a7d3875b6.webp 760w,
+               /post/stock_returns/output_21_0_hua1ae01a9eff772d47d901f845eb1b44a_236187_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/post/stock_returns/output_21_0_hua1ae01a9eff772d47d901f845eb1b44a_236187_54a52bbb659184ab293fd66ab08a7d56.webp"
+               width="760"
+               height="279"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="we-are-extracting-the-whiskers-threshold-from-the-box-plot">We are extracting the whiskers (threshold) from the box plot</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">LowerWhisker</span> <span class="o">=</span> <span class="n">WhiskersBoxPlot</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">UpperWhisker</span> <span class="o">=</span> <span class="n">WhiskersBoxPlot</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_ydata</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;The lower and upper threshold for extremal values are </span><span class="si">{</span><span class="n">LowerWhisker</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">UpperWhisker</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>The lower and upper threshold for extremal values are -0.0310 and 0.0326
+</code></pre>
+<h3 id="let-us-remove-the-extremal-value-from-the-log-returns">Let us remove the extremal value from the log returns</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">JPMStockLogReturns</span> <span class="o">&lt;=</span> <span class="n">UpperWhisker</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">JPMStockLogReturns</span> <span class="o">&gt;=</span> <span class="n">LowerWhisker</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">JPMStockLogReturnsTrimmed</span> <span class="o">=</span> <span class="n">JPMStockLogReturns</span><span class="p">[</span><span class="n">Mask</span><span class="p">]</span>
+</span></span></code></pre></div><h3 id="let-us-re-plot-the-jpm-log-returns-over-last-10-years-omitting-the-extremal-data">Let us re-plot the JPM log returns over last 10 years omitting the extremal data</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">JPMStockLogReturnsTrimmed</span><span class="p">,</span> <span class="n">dist</span><span class="o">=</span><span class="s2">&#34;norm&#34;</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;JPMorgan Chase &amp; Co Log Returns Q-Q Plot&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">WhiskersBoxPlot</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">JPMStockLogReturnsTrimmed</span><span class="p">)[</span><span class="s2">&#34;whiskers&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&#34;Variable&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&#34;Value&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&#34;JPMorgan Chase &amp; Co Log Returns Box Plot&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt="png" srcset="
+               /post/stock_returns/output_27_0_hub7a40554894032edf1d8b36de0098fd0_277022_5842255c97c2b80fe8cf9b133799bef3.webp 400w,
+               /post/stock_returns/output_27_0_hub7a40554894032edf1d8b36de0098fd0_277022_521225f49798201b582e72ceb120bc58.webp 760w,
+               /post/stock_returns/output_27_0_hub7a40554894032edf1d8b36de0098fd0_277022_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/post/stock_returns/output_27_0_hub7a40554894032edf1d8b36de0098fd0_277022_5842255c97c2b80fe8cf9b133799bef3.webp"
+               width="760"
+               height="277"
+               loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<h3 id="shapiro-wilk-test---log-returns-of-jpmorgan-chase--co-omitting-the-extremal-values">Shapiro-Wilk test - Log returns of JPMorgan Chase &amp; Co (Omitting the extremal values)</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pvalue</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">JPMStockLogReturnsTrimmed</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Normality Test Results of JPMorgan Chase &amp; Co stock (Shapiro-Wilk test):&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;p-value = </span><span class="si">{</span><span class="n">pvalue</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">pvalue</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Statistically significant evidence that the data is NOT normally distributed.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No statistically significant evidence against normality.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>Normality Test Results of JPMorgan Chase &amp; Co stock (Shapiro-Wilk test):
+p-value = 7.01930446211918e-07
+Statistically significant evidence that the data is NOT normally distributed.
+</code></pre>
+<p>Interesting results! Even after omitting the extreme values, JPM&rsquo;s log returns still refuse to conform to a normal distribution. This reveals a critical insight: the normality hypothesis does not just crumble under extreme market events—it falters even in calmer waters. We must critically analyze into factors like distribution skewness and question the assumption that daily log returns are independent and uncorrelated. While assuming normality simplifies the math, it strays far from reality, urging us to rethink our models to mimick the true stock behavior.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>So, where does this leave us? My journey down this rabbit hole has shown me that the &rsquo;normal distribution&rsquo; of stock returns is more of a myth than a reality, at least over the long run. Even when we carefully removed the most extreme outliers, the data still refused to play by the rules. For me, the biggest takeaway is this: the outliers and the chaos in the data aren&rsquo;t just noise to be ignored. They are the story. Relying on simplified models that assume a perfect, well-behaved world can be misleading.</p>
+<p>Thanks for reading! I hope you enjoyed this blog as much as I did.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=%2Fpost%2Fstock_returns%2F&amp;text=Are&#43;financial&#43;stock&#43;returns&#43;normally&#43;distributed%3F" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=%2Fpost%2Fstock_returns%2F&amp;t=Are&#43;financial&#43;stock&#43;returns&#43;normally&#43;distributed%3F" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=Are%20financial%20stock%20returns%20normally%20distributed%3F&amp;body=%2Fpost%2Fstock_returns%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=%2Fpost%2Fstock_returns%2F&amp;title=Are&#43;financial&#43;stock&#43;returns&#43;normally&#43;distributed%3F" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Are&#43;financial&#43;stock&#43;returns&#43;normally&#43;distributed%3F%20%2Fpost%2Fstock_returns%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=%2Fpost%2Fstock_returns%2F&amp;title=Are&#43;financial&#43;stock&#43;returns&#43;normally&#43;distributed%3F" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu6486c285d0c8ff98a173d1783271b5db_1099604_270x270_fill_lanczos_center_3.png" alt="Chakradhar Rangi"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Chakradhar Rangi</a></h5>
+      <h6 class="card-subtitle">Doctoral candidate in computational physics</h6>
+      <p class="card-text">My research interests include Computational Condensed Matter Physics and developing scientific codes.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:rchakri25@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.co.in/citations?user=aeICSaYAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/chakradhar-rangi/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/crangi" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/CV_Rangi.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2025
+  </p>
+  
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.f64289d8217e08e3afcd597d60836062.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.ead4a376bcf2c4714888c770ea9b0040.js"></script>
+
+
+
+  <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
